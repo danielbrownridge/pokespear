@@ -1,4 +1,7 @@
 language: python
 os: linux
 dist: bionic
-install: "make"
+install:
+  - make
+script:
+  - make test
