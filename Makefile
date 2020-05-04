@@ -1,0 +1,3 @@
+.PHONY
+install:
+	pipenv install
