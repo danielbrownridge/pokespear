@@ -10,6 +10,7 @@ pytest = "*"
 pytest-pylint = "*"
 pylint = "<=2.5.0"
 pytest-flake8 = "*"
+pytest-mypy = "*"
 
 [requires]
 python_version = "3.6"
