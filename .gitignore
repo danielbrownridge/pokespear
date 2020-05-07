@@ -1,2 +1,6 @@
+.eggs/
 .mypy_cache/
+build/
+dist/
+*.egg-info/
 *.swp

@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "4e9bf2200f2916dc47b0ada118082e4ac21531422e66660251de34de2b4712d1"
+            "sha256": "6736787d64c289b9bde24220b26480c3033ba549873b818e15a12b5935fc6423"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -147,6 +147,9 @@
             ],
             "version": "==0.13.1"
         },
+        "pokespear": {
+            "path": "."
+        },
         "py": {
             "hashes": [
                 "sha256:5e27081401262157467ad6e7f851b7aa402c5852dbcb3dae06768434de5752aa",
@@ -209,11 +212,11 @@
         },
         "pytest-pylint": {
             "hashes": [
-                "sha256:7c082e32a3ec82cdedd2ad31bffcb66e3ba1bdaefcdada315b78ac17fa9146b7",
-                "sha256:df475b4758898f10d7143b249bdc2a2e8d078fdb0e85ea326d3d2579ee029386"
+                "sha256:b0c177d63f6e3f5b82fa2720a6570dd2ecff1616c26ed6d02d0cbf75fd98ddf9",
+                "sha256:c6a1b9ad7dc819ea56ebd45fc1f5a611f0848b9a5b85fdcd8deafd07b22e7f2e"
             ],
             "index": "pypi",
-            "version": "==0.16.1"
+            "version": "==0.17.0"
         },
         "six": {
             "hashes": [
