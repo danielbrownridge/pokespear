@@ -3,4 +3,4 @@ install:
 	pipenv install
 .PHONY: test
 test:
-	pipenv run pytest tests
+	pipenv run pytest

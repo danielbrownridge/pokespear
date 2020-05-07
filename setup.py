@@ -1,6 +1,11 @@
 from setuptools import setup
 setup(
     name="pokespear",
+    entry_points={
+        "console_scripts": [
+            "pokespear=pokespear.command_line:main"
+        ],
+    },
     packages=[
         "pokespear",
     ],
