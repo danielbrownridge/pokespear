@@ -14,4 +14,5 @@ def main() -> None:
     description = metadata["summary"]
     parser = argparse.ArgumentParser(description=description)
     parser.add_argument("pokemon")
-    parser.parse_args()
+    args = parser.parse_args()
+    print(args)

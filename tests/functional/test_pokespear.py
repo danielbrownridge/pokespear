@@ -5,6 +5,20 @@ from subprocess import CalledProcessError, run, PIPE
 
 import pytest
 
+USEAGE = "usage: pokespear [-h] pokemon\n"
+POSITIONAL_ERROR = (
+    "pokespear: error: the following arguments are required: pokemon\n"
+)
+DESCRIPTION = "Show Shakesperan description of Pokémon.\n"
+POSITIONAL_ARGUMENTS = (
+    "positional arguments:\n"
+    "  pokemon\n"
+)
+OPTIONAL_ARGUMENTS = (
+    "optional arguments:\n"
+    "  -h, --help  show this help message and exit\n"
+)
+
 
 def test_script_found() -> None:
     """Check that pokespear exists and is executable."""
@@ -20,6 +34,20 @@ def test_no_args() -> None:
         run(args, check=True, encoding="utf-8", stdout=PIPE, stderr=PIPE)
     assert execinfo.value.stdout == ''
     assert execinfo.value.stderr == (
-        "usage: pokespear [-h] pokemon\n"
-        "pokespear: error: the following arguments are required: pokemon\n"
+        USEAGE +
+        POSITIONAL_ERROR
     )
+
+
+def test_help() -> None:
+    """Check that a help message is displayed when the '-h' option is used"""
+    args = ["pokespear", "-h"]
+    completed = run(args, check=True, encoding="utf-8", stdout=PIPE,
+                    stderr=PIPE)
+    assert completed.stdout == (
+        USEAGE + "\n" +
+        DESCRIPTION + "\n" +
+        POSITIONAL_ARGUMENTS + "\n" +
+        OPTIONAL_ARGUMENTS
+    )
+    assert completed.stderr == ''
