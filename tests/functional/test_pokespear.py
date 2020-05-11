@@ -42,6 +42,7 @@ def test_no_args() -> None:
 def test_help() -> None:
     """Check that a help message is displayed when the '-h' option is used"""
     args = ["pokespear", "-h"]
+
     completed = run(args, check=True, encoding="utf-8", stdout=PIPE,
                     stderr=PIPE)
     assert completed.stdout == (
@@ -51,3 +52,13 @@ def test_help() -> None:
         OPTIONAL_ARGUMENTS
     )
     assert completed.stderr == ''
+
+
+def test_bad_pokemon() -> None:
+    """Check an error message is displayed if an invalid Pokémon is given."""
+    args = ["pokespear", "banana"]
+    error = "resource not found (banana), check spelling\n"
+    with pytest.raises(CalledProcessError) as execinfo:
+        run(args, check=True, encoding="utf-8", stdout=PIPE, stderr=PIPE)
+    assert execinfo.value.stdout == ""
+    assert execinfo.value.stderr == error
