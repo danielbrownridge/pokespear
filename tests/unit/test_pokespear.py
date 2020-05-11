@@ -13,13 +13,20 @@ def test_main_callable():
 
 
 @pytest.mark.parametrize("pokemon, description", [
-    ("bulbasaur", (
+    pytest.param("bulbasaur", (
         "A strange seed was\n"
         "planted on its\n"
         "back at birth.\f"
         "The plant sprouts\n"
         "and grows with\n"
-        "this POKéMON.")),
+        "this POKéMON."), id="first gen"),
+    pytest.param("chikorita", (
+        "A sweet aroma\n"
+        "gently wafts from\n"
+        "the leaf on its\f"
+        "head. It is docile\n"
+        "and loves to soak\n"
+        "up the sun's rays."), id="second gen"),
 ])
 def test_getpokemondescription_success(pokemon, description):
     """A text description should be returned when the name of a pokémon is

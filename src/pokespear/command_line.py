@@ -12,14 +12,10 @@ import pokebase
 
 def get_pokemon_description(pokemon: str) -> str:
     """English description of a pokemon from the original game."""
-    language = "en"
-    version = "red"
-    _ = pokemon
     species = pokebase.pokemon_species(pokemon)
     entries = species.flavor_text_entries
-    entry = [entry for entry in entries
-             if entry.language.name == language
-             and entry.version.name == version][0]
+    en_entries = filter(lambda x: x.language.name == "en", entries)
+    entry = min(en_entries, key=lambda x: x.version.id)
     description = str(entry.flavor_text)
     return description
 
