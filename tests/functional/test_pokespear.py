@@ -12,7 +12,7 @@ POSITIONAL_ERROR = (
 DESCRIPTION = "Show Shakesperan description of Pokémon.\n"
 POSITIONAL_ARGUMENTS = (
     "positional arguments:\n"
-    "  pokemon\n"
+    "  pokemon     The name of a Pokémon e.g. bulbasaur\n"
 )
 OPTIONAL_ARGUMENTS = (
     "optional arguments:\n"

@@ -28,7 +28,7 @@ def get_shakespearean_translation(text: str) -> str:
 
 
 def get_pokemon_description(pokemon: str) -> str:
-    """English description of a pokemon from the original game."""
+    """English description of a pokemon from it's debut game apperance."""
     species = pokebase.pokemon_species(pokemon)
     entries = species.flavor_text_entries
     en_entries = filter(lambda x: x.language.name == LANG, entries)
@@ -43,7 +43,7 @@ def main() -> None:
     metadata = email.message_from_string(dist.get_metadata(dist.PKG_INFO))
     description = metadata["summary"]
     parser = argparse.ArgumentParser(description=description)
-    parser.add_argument("pokemon")
+    parser.add_argument("pokemon", help="The name of a Pokémon e.g. bulbasaur")
     args = parser.parse_args()
     try:
         description = get_pokemon_description(args.pokemon)
