@@ -16,8 +16,8 @@ as a user executable python package.
 
 ## Usage
 
-    $ pipenv run pokespear
-    $ pipenv run pokespear -h
+    $ pipenv shell
+    (pokespear) $ pokespear -h
     usage: pokespear [-h] pokemon
 
     Show Shakesperan description of Pokémon.
@@ -27,3 +27,6 @@ as a user executable python package.
 
     optional arguments:
       -h, --help  show this help message and exit
+    
+    (pokespear) $ pokespear bulbasaur
+    A strange seed wast planted on its back at birth. The plant sprouts and grows with this pokémon. 
