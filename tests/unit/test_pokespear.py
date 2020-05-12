@@ -2,8 +2,13 @@
 Unit tests for the pokespear script.
 """
 import pytest
+from requests.exceptions import HTTPError
 
-from pokespear.command_line import main, get_pokemon_description
+from pokespear.command_line import (
+    main,
+    get_pokemon_description,
+    get_shakespearean_translation
+)
 
 
 def test_main_callable():
@@ -42,3 +47,14 @@ def test_getpokemondescription_failure():
     with pytest.raises(ValueError) as exc_info:
         get_pokemon_description(pokemon)
     assert str(exc_info.value) == exception
+
+
+@pytest.mark.xfail(raises=HTTPError, reason="Public calls ratelimited")
+@pytest.mark.parametrize("text, translation", [
+    ("True Layer makes Open Banking easier to use.",
+     "True layer maketh ope banking easier to useth."),
+])
+def test_shakespearean_translation(text, translation):
+    """The supplied text should be returned in Shakesperean style."""
+    result = get_shakespearean_translation(text)
+    assert result == translation
