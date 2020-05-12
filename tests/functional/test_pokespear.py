@@ -62,3 +62,17 @@ def test_bad_pokemon():
         run(args, check=True, encoding="utf-8", stdout=PIPE, stderr=PIPE)
     assert execinfo.value.stdout == ""
     assert execinfo.value.stderr == error
+
+
+@pytest.mark.xfail(raises=CalledProcessError, reason="API is ratelimited")
+def test_good_pokemon():
+    """Check that the shakesperean translation of Pokémon is displayed."""
+    args = ["pokespear", "bulbasaur"]
+    translation = (
+        "A strange seed wast planted on its back at birth. The plant sprouts a"
+        "nd grows with this pokémon.\n"
+    )
+    completed = run(args, check=True, encoding="utf-8", stdout=PIPE,
+                    stderr=PIPE)
+    assert completed.stdout == translation
+    assert completed.stderr == ""

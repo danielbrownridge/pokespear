@@ -49,4 +49,8 @@ def main() -> None:
         description = get_pokemon_description(args.pokemon)
     except ValueError as exc:
         sys.exit(str(exc))
-    print(description)
+    try:
+        translation = get_shakespearean_translation(description)
+    except requests.exceptions.HTTPError as exc:
+        sys.exit(str(exc))
+    print(translation)
