@@ -2,5 +2,6 @@ version: "3.8"
 services:
   pokespear:
     build: .
+    command: flask run --host="0.0.0.0"
     ports:
-      - 80:80
+      - "80:5000"

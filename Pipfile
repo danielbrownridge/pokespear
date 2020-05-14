@@ -14,6 +14,7 @@ pytest-mypy = "*"
 pokespear = {path = "."}
 pokebase = "*"
 pytest-docker-compose = "*"
+flask = "*"
 
 [requires]
 python_version = "3.6"
