@@ -22,6 +22,22 @@ The container uses docker compose which is installed via pipenv so run
     $ make install
     $ make docker
 
+## Run the webapp
+
+The web app can either be run directly or via the container:
+
+### locally
+
+    $ make runlocal
+
+The app will come up on http://localhost:8000
+
+### in a docker container
+
+    $ make run
+
+The app will come up on http://localhost/
+
 ## Command line usage
 
     $ pipenv shell
