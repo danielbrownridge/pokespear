@@ -7,7 +7,6 @@ from requests.exceptions import HTTPError
 from .common import get_pokemon_description, get_shakespearean_translation
 
 app = Flask(__name__)
-app.debug = True
 
 
 @app.route("/")

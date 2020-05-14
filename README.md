@@ -10,11 +10,19 @@
 ## Installation
 
 By default make will use pipenv to create a virtualenv and install pokespear
-as a user executable python package.
+as command line took implemented as a user executable python package.
 
     $ make install
 
-## Usage
+## Build the Docker container
+
+The container uses docker compose which is installed via pipenv so run
+`make install` first.
+
+    $ make install
+    $ make docker
+
+## Command line usage
 
     $ pipenv shell
     (pokespear) $ pokespear -h
