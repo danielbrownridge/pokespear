@@ -2,6 +2,7 @@
 from typing import Dict
 
 from flask import Flask
+from requests.exceptions import HTTPError
 
 from .common import get_pokemon_description, get_shakespearean_translation
 
@@ -18,9 +19,15 @@ def root() -> str:
 @app.route("/pokemon/<name>")
 def pokemon(name: str) -> Dict[str, str]:
     """Shakesperean Pokémon description JSON endpoint."""
-    description = get_pokemon_description(name)
-    translation = get_shakespearean_translation(description)
-    return {
-        "name": name,
-        "description": translation
+    response = {
+        "name": name
     }
+    try:
+        description = get_pokemon_description(name)
+    except ValueError as exc:
+        response["error"] = str(exc)
+    try:
+        response["description"] = get_shakespearean_translation(description)
+    except HTTPError as exc:
+        response["error"] = str(exc)
+    return response
