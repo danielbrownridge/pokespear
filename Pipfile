@@ -15,6 +15,7 @@ pokespear = {path = "."}
 pokebase = "*"
 pytest-docker-compose = "*"
 flask = "*"
+gunicorn = "*"
 
 [requires]
 python_version = "3.6"
