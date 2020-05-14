@@ -2,3 +2,5 @@ version: "3.8"
 services:
   pokespear:
     build: .
+    ports:
+      - 80:80
