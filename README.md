@@ -53,3 +53,14 @@ The app will come up on http://localhost/
     
     (pokespear) $ pokespear bulbasaur
     A strange seed wast planted on its back at birth. The plant sprouts and grows with this pokémon. 
+
+## Tests
+
+The tests run the docker containers so may take a moment to complete:
+
+    $ make test
+
+
+## Continuous integration
+
+The tests are running in Travis CI https://travis-ci.com/github/danielbrownridge/pokespear
