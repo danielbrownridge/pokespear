@@ -1,20 +1,10 @@
 """
-Unit tests for the pokespear script.
+Unit tests for common pokespear functions.
 """
 import pytest
 from requests.exceptions import HTTPError
 
-from pokespear.command_line import (
-    main,
-    get_pokemon_description,
-    get_shakespearean_translation
-)
-
-
-def test_main_callable():
-    """Check entry point for pokespear command-line script can be called."""
-    with pytest.raises(SystemExit):
-        main()
+from pokespear import get_pokemon_description, get_shakespearean_translation
 
 
 @pytest.mark.parametrize("pokemon, description", [

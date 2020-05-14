@@ -1,4 +1,6 @@
 """Pokespear Flask web app."""
+from typing import Dict
+
 from flask import Flask
 
 app = Flask(__name__)
@@ -11,7 +13,9 @@ def root() -> str:
 
 
 @app.route("/pokemon/<name>")
-def pokemon(name: str) -> dict:
+def pokemon(name: str) -> Dict[str, str]:
+    """Shakesperean Pokémon description JSON endpoint."""
+
     return {
         "name": name
     }
