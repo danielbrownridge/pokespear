@@ -4,8 +4,6 @@ import requests
 import urllib3
 
 
-pytest_plugins = ["docker_compose"]
-
 @pytest.fixture()
 def http():
     """An http session configured to retry a few times."""
