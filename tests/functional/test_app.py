@@ -28,5 +28,4 @@ def test_pokemon_endpoint(http, service_url):
     }
     url = urljoin(service_url, path)
     response = http.get(url)
-    print(json)
     assert response.json() == json

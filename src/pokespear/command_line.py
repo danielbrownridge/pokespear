@@ -9,7 +9,7 @@ import sys
 import pkg_resources
 import requests
 
-from . import get_pokemon_description, get_shakespearean_translation
+from .common import get_pokemon_description, get_shakespearean_translation
 
 LANG = "en"
 SHAKESPEARE_API_URL = (
