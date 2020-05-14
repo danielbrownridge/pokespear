@@ -3,7 +3,6 @@
 ## Dependencies
 
  * [Python 3 (3.6+)](https://docs.python.org/3.6/using/index.html)
- * [pipenv](https://github.com/pypa/pipenv#installation)
  * [Docker](https://docs.docker.com/engine/install/)
  * [GNU Make](https://www.gnu.org/software/make/)
 
