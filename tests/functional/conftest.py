@@ -36,4 +36,4 @@ def service_url(function_scoped_container_getter):
     network_info = container.network_info[0]
     host = network_info.hostname
     port = network_info.host_port
-    return Url(scheme=scheme, host=host, port=port)
+    return Url(scheme=scheme, host=host, port=port).url
