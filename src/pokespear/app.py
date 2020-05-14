@@ -8,3 +8,10 @@ app = Flask(__name__)
 def root() -> str:
     """Display the name of the service at the web root."""
     return "Pokéspear"
+
+
+@app.route("/pokemon/<name>")
+def pokemon(name: str) -> dict:
+    return {
+        "name": name
+    }
